@@ -27,6 +27,8 @@ jobs:
     - name: copy file via ssh key
       uses: appleboy/scp-action@v0.1.4
       with:
+       host: ${{ secrets.HOST }}
+       username: ${{ secrets.USERNAME }}
        key: ${{ secrets.ID_ED25519 }}
        source: "*"
        target: "/home/chemchem/test"
